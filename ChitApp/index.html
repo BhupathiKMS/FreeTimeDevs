@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      .labelWidth {
+        width: 8rem;
+      }
+      .container-fluid {
+        border-radius: 3px;
+        border: 3px solid grey;
+        padding-top: 15px;
+        min-height: 100vh;
+      }
+      .title {
+        text-align: center;
+      }
+      h3 {
+        padding: 2px;
+      }
+      body {
+        background-color: rgb(23 37 84);
+        color: white;
+      }
+
+      textarea{
+        height: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="title">
+        <h3>Chit Calculator</h3>
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text labelWidth" id="inputGroup-sizing-sm"
+          >Total Members</span
+        >
+        <input
+          type="text"
+          id="noOfParticipants"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+          required
+        />
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text labelWidth" id="inputGroup-sizing-sm"
+          >Chit Amount</span
+        >
+        <input
+          type="text"
+          id="totalAmount"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text labelWidth" id="inputGroup-sizing-sm"
+          >Auction Number</span
+        >
+        <input
+          type="text"
+          id="auctionNumber"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text labelWidth" id="inputGroup-sizing-sm"
+          >Commission</span
+        >
+        <input
+          type="text"
+          id="commission"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text labelWidth" id="inputGroup-sizing-sm"
+          >Spends</span
+        >
+        <input
+          type="text"
+          id="spends"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text labelWidth" id="inputGroup-sizing-sm"
+          >Discount Bid</span
+        >
+        <input
+          id="discountBid"
+          type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
+          onchange="call();"
+        />
+        <button
+          class="btn btn-primary btn-sm"
+          type="button"
+          id="button-addon2"
+          onclick="add5000()"
+        >
+          + 5,000
+        </button>
+      </div>
+      <br />
+      <div class="row g-2">
+        <div class="col">
+          <label for="ip1" class="form-label">Each Pay</label>
+          <input type="text" id="ip1" class="form-control" disabled />
+        </div>
+        <div class="col">
+          <label for="ip2" class="form-label">Bidder Receive</label>
+          <input type="text" id="ip2" class="form-control" disabled />
+        </div>
+      </div>
+      <br />
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Expand For Calculations
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div id="ip3" class="accordion-body">
+              <!-- <textarea class="form-control" id="ip3" disabled></textarea> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
