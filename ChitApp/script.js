@@ -31,7 +31,7 @@ function call() {
   (totalAmount - discountBid - (auctionNumber * totalAmount / noOfParticipants) + commission + spends ) / (noOfParticipants- auctionNumber);
     
         document.getElementById('ip1').value = 'Rs. '+Math.round(individualContribution);
-        document.getElementById('ip2').value = 'Rs. '+Math.round((noOfParticipants-auctionNumber)*individualContribution + (auctionNumber-1)*(totalAmount / noOfParticipants) - commission)
+        document.getElementById('ip2').value = 'Rs. '+Math.round(totalAmount - discountBid)
         document.getElementById('ip3').innerHTML=`
         
         (totalAmount - discountBid 
