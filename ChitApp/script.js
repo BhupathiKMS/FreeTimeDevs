@@ -28,32 +28,29 @@ function call() {
   let discountBid = Number(document.getElementById("discountBid").value);
   
   const individualContribution =
-    (totalAmount -discountBid - ((auctionNumber - 1) 
-    * totalAmount) / noOfParticipants 
-    - totalAmount / noOfParticipants) /(noOfParticipants - (auctionNumber - 1) - 1) 
-    + (commission + spends) / (noOfParticipants - (auctionNumber - 1));
+  (totalAmount - discountBid - (auctionNumber * totalAmount / noOfParticipants) + commission + spends ) / (noOfParticipants- auctionNumber);
     
         document.getElementById('ip1').value = 'Rs. '+Math.round(individualContribution);
-        document.getElementById('ip2').value = 'Rs. '+Math.round((noOfParticipants-auctionNumber)*individualContribution + (auctionNumber - 1)*(totalAmount/noOfParticipants))
+        document.getElementById('ip2').value = 'Rs. '+Math.round((noOfParticipants-auctionNumber)*individualContribution + (auctionNumber-1)*(totalAmount / noOfParticipants) - commission)
         document.getElementById('ip3').innerHTML=`
         
-    (totalAmount -discountBid - ((auctionNumber - 1) 
-    * totalAmount) / noOfParticipants 
-    - totalAmount / noOfParticipants) /(noOfParticipants - (auctionNumber - 1) - 1) 
-    + (commission + spends) / (noOfParticipants - (auctionNumber - 1))
+        (totalAmount - discountBid 
+        - (auctionNumber * totalAmount / noOfParticipants) 
+        + commission + spends) 
+        / (noOfParticipants - auctionNumber)
     </br></br>
-    (${totalAmount} -${discountBid} - ((${auctionNumber} - 1) 
-    * ${totalAmount}) / ${noOfParticipants} 
-    - ${totalAmount} / ${noOfParticipants}) /(${noOfParticipants} - (${auctionNumber} - 1) - 1) 
-    + (${commission} + ${spends}) / (${noOfParticipants} - (${auctionNumber} - 1))
+        (${totalAmount} - ${discountBid }
+        - (${auctionNumber} * ${totalAmount} / ${noOfParticipants}) 
+        + ${commission} + ${spends}) 
+        / (${noOfParticipants} - ${auctionNumber})
     `
           
 
 }
 
-function add5000() {
+function add1000() {
   let val = document.getElementById("discountBid").value;
-  val = Number(val) + 5000;
+  val = Number(val) + 1000;
   document.getElementById("discountBid").value = val;
   call();
 }
